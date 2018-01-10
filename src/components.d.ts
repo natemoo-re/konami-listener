@@ -6,31 +6,30 @@
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  KonamiCode as KonamiListener
+} from './components/konami-listener/konami-listener';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLElement {
+  interface HTMLKonamiListenerElement extends KonamiListener, HTMLElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLKonamiListenerElement: {
+    prototype: HTMLKonamiListenerElement;
+    new (): HTMLKonamiListenerElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "konami-listener": HTMLKonamiListenerElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "konami-listener": HTMLKonamiListenerElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "konami-listener": JSXElements.KonamiListenerAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+    export interface KonamiListenerAttributes extends HTMLAttributes {
+      
     }
   }
 }

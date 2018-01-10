@@ -1,8 +1,8 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'konami-listener',
   generateDistribution: true,
   bundles: [
-    { components: ['my-component'] }
+    { components: ['konami-listener'] }
   ]
 };
 
