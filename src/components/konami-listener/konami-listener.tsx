@@ -5,7 +5,7 @@ import { Component, State, Listen, Event, EventEmitter, Element } from '@stencil
   styleUrl: 'konami-listener.scss',
   shadow: true
 })
-export class KonamiCode {
+export class KonamiListener {
 
   keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
   accepted = [...new Set(this.keys)];

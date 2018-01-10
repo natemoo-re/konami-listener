@@ -6,7 +6,7 @@
 
 
 import {
-  KonamiCode as KonamiListener
+  KonamiListener as KonamiListener
 } from './components/konami-listener/konami-listener';
 
 declare global {
