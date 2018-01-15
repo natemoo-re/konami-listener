@@ -11,4 +11,14 @@
             <h2>It works!</h2>
         </konami-listener>
     </body>
+
+    <script>
+        const konami = document.querySelector('konami-listener');
+        konami.addEventListener('match', () => {
+            console.log('Match');
+        })
+        konami.addEventListener('input', ({ detail }) => {
+            console.log('Input', { detail });
+        })
+    </script>
 </html>
