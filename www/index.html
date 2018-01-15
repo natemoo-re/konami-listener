@@ -26,9 +26,22 @@
 
   <script>
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      // auto-unregister service worker during dev mode
-      navigator.serviceWorker.ready.then(function(registration) {
-        registration.unregister().then(function() { location.reload(true) });
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) {
+            console.log('service worker registered', reg);
+
+            reg.onupdatefound = function() {
+              var installingWorker = reg.installing;
+
+              installingWorker.onstatechange = function() {
+                if (installingWorker.state === 'installed') {
+                  window.dispatchEvent(new Event('swUpdate'))
+                }
+              }
+            }
+          })
+          .catch(function(err) { console.log('service worker error', err) });
       });
     }
   </script>
