@@ -13,7 +13,7 @@
       },
       "states": [
         {
-          "name": "input"
+          "name": "inputs"
         }
       ],
       "listeners": [
@@ -29,7 +29,10 @@
       },
       "events": [
         {
-          "event": "matched"
+          "event": "input"
+        },
+        {
+          "event": "match"
         }
       ],
       "slot": "hasSlots",

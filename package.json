@@ -1,14 +1,14 @@
 {
-  "name": "my-component",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "name": "konami-listener",
+  "version": "0.2.0",
+  "description": "Konami Code listener as a Vanilla Web Component",
   "main": "dist/konami-listener.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/mycomponent.js",
+  "browser": "dist/konami-listener.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -28,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/natemoo-re/konami-listener.git"
   },
-  "author": "Ionic Team",
+  "author": "Nate Moore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/natemoo-re/konami-listener"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "http://projects.natemoo.re/konami-listener",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"

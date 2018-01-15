@@ -3,30 +3,32 @@ export class KonamiListener {
     constructor() {
         this.keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
         this.accepted = [...new Set(this.keys)];
-        this.input = [];
+        this.inputs = [];
     }
     handleKey(e) {
         let { key } = e;
         if (!this.accepted.includes(key))
             return;
-        (this.keys[this.input.length] === key)
-            ? this.onMatch(key)
+        (this.keys[this.inputs.length] === key)
+            ? this.handleInput(key)
             : this.reset();
     }
-    onMatch(key) {
-        this.input.push(key);
-        if (this.input.length === 10) {
-            this.onFullMatch();
+    handleInput(key) {
+        this.inputs.push(key);
+        this.input.emit({ key });
+        if (this.inputs.length === 10) {
+            this.handleMatch();
         }
     }
-    onFullMatch() {
-        this.matched.emit();
+    handleMatch() {
+        this.match.emit();
         this.el.classList.add('active');
         this.reset();
     }
     reset() {
-        if (this.input.length) {
-            this.input = [];
+        if (this.inputs.length) {
+            this.inputs = [];
+            this.input.emit({ reset: true });
         }
     }
     render() {
