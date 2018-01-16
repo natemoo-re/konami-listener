@@ -4,22 +4,116 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
+
   <script src="/build/konami-listener.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
 
+  <header>
+    <h1> Konami Listener </h1>
+    <p> A web component to detect the Konami Code on any website! It's as simple as including the script and a <code>&lt;konami-listener&gt;</code> tag.</p>
+
+  </header>
+
+  <main>
+    <div class="inputs">
+      <div class="up">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M16.667 50l5.875 5.875 23.291-23.25v50.708h8.334V32.625l23.25 23.292L83.333 50 50 16.667z" fill-rule="nonzero" fill="#000"/>
+          <path d="M16.667 50l5.875 5.875 23.291-23.25v50.708h8.334V32.625l23.25 23.292L83.333 50 50 16.667z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="up">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M16.667 50l5.875 5.875 23.291-23.25v50.708h8.334V32.625l23.25 23.292L83.333 50 50 16.667z" fill-rule="nonzero" fill="#000"/>
+          <path d="M16.667 50l5.875 5.875 23.291-23.25v50.708h8.334V32.625l23.25 23.292L83.333 50 50 16.667z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="down">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M83.333 50l-5.875-5.875-23.291 23.25V16.667h-8.334v50.708l-23.25-23.292L16.667 50 50 83.333z" fill-rule="nonzero" fill="#000"/>
+          <path d="M83.333 50l-5.875-5.875-23.291 23.25V16.667h-8.334v50.708l-23.25-23.292L16.667 50 50 83.333z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="down">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M83.333 50l-5.875-5.875-23.291 23.25V16.667h-8.334v50.708l-23.25-23.292L16.667 50 50 83.333z" fill-rule="nonzero" fill="#000"/>
+          <path d="M83.333 50l-5.875-5.875-23.291 23.25V16.667h-8.334v50.708l-23.25-23.292L16.667 50 50 83.333z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="left">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M50 83.333l5.875-5.875-23.25-23.291h50.708v-8.334H32.625l23.292-23.25L50 16.667 16.667 50z" fill-rule="nonzero" fill="#000"/>
+          <path d="M50 83.333l5.875-5.875-23.25-23.291h50.708v-8.334H32.625l23.292-23.25L50 16.667 16.667 50z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="right">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M50 16.667l-5.875 5.875 23.25 23.291H16.667v8.334h50.708l-23.292 23.25L50 83.333 83.333 50z" fill-rule="nonzero" fill="#000"/>
+          <path d="M50 16.667l-5.875 5.875 23.25 23.291H16.667v8.334h50.708l-23.292 23.25L50 83.333 83.333 50z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="left">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M50 83.333l5.875-5.875-23.25-23.291h50.708v-8.334H32.625l23.292-23.25L50 16.667 16.667 50z" fill-rule="nonzero" fill="#000"/>
+          <path d="M50 83.333l5.875-5.875-23.25-23.291h50.708v-8.334H32.625l23.292-23.25L50 16.667 16.667 50z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="right">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M50 16.667l-5.875 5.875 23.25 23.291H16.667v8.334h50.708l-23.292 23.25L50 83.333 83.333 50z" fill-rule="nonzero" fill="#000"/>
+          <path d="M50 16.667l-5.875 5.875 23.25 23.291H16.667v8.334h50.708l-23.292 23.25L50 83.333 83.333 50z" fill-rule="nonzero" fill="#000"/>
+        </svg>
+      </div>
+      <div class="B">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M28.129 85V19.594h22.416c7.397 0 13.027 1.482 16.89 4.447 3.864 2.965 5.795 7.382 5.795 13.252 0 2.995-.808 5.69-2.425 8.086-1.618 2.396-3.983 4.253-7.098 5.57 3.534.959 6.267 2.763 8.198 5.413 1.932 2.65 2.898 5.833 2.898 9.546 0 6.14-1.97 10.856-5.907 14.15C64.957 83.354 59.32 85 51.982 85H28.13zm11.365-29.514v20.44h12.623c3.564 0 6.35-.884 8.356-2.65 2.006-1.768 3.01-4.223 3.01-7.368 0-6.798-3.475-10.272-10.422-10.422H39.494zm0-8.355h11.14c3.535 0 6.297-.801 8.289-2.403 1.991-1.603 2.987-3.871 2.987-6.806 0-3.235-.92-5.57-2.763-7.008-1.841-1.437-4.709-2.156-8.602-2.156h-11.05V47.13z" fill="#000" fill-rule="evenodd"/>
+          <path d="M28.129 85V19.594h22.416c7.397 0 13.027 1.482 16.89 4.447 3.864 2.965 5.795 7.382 5.795 13.252 0 2.995-.808 5.69-2.425 8.086-1.618 2.396-3.983 4.253-7.098 5.57 3.534.959 6.267 2.763 8.198 5.413 1.932 2.65 2.898 5.833 2.898 9.546 0 6.14-1.97 10.856-5.907 14.15C64.957 83.354 59.32 85 51.982 85H28.13zm11.365-29.514v20.44h12.623c3.564 0 6.35-.884 8.356-2.65 2.006-1.768 3.01-4.223 3.01-7.368 0-6.798-3.475-10.272-10.422-10.422H39.494zm0-8.355h11.14c3.535 0 6.297-.801 8.289-2.403 1.991-1.603 2.987-3.871 2.987-6.806 0-3.235-.92-5.57-2.763-7.008-1.841-1.437-4.709-2.156-8.602-2.156h-11.05V47.13z" fill="#000" fill-rule="evenodd"/>
+        </svg>
+      </div>
+      <div class="A">
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path class="fixed" d="M63.146 69.771H37.81L32.509 85H20.694l24.707-65.406H55.6L80.35 85H68.49l-5.345-15.229zm-22.147-9.164h18.957l-9.478-27.132-9.479 27.132z" fill="#000" fill-rule="evenodd"/>
+          <path d="M63.146 69.771H37.81L32.509 85H20.694l24.707-65.406H55.6L80.35 85H68.49l-5.345-15.229zm-22.147-9.164h18.957l-9.478-27.132-9.479 27.132z" fill="#000" fill-rule="evenodd"/>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div><h4> made with <3 by </h4> <a href="https://twitter.com/n_moore">@n_moore</a></div>
+      <div><h4> see the code on</h4><a href="https://github.com/natemoo-re/konami-listener">Github</a></div>
+    </div>
+  </footer>
+
   <konami-listener>
-    <h1>Hello world!</h1>
+    <div class="prize">
+      <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#FFBD3F" d="M236 296h24v24h-24z"/><path fill="#DC931A" d="M140 320h120v24H140z"/><path fill="#F5A623" d="M68 105h24v24H68z"/><path fill="#FFBD3F" d="M92 81h24v24H92z"/><path fill="#F5A623" d="M332 105h-24v24h24z"/><path fill="#FFBD3F" d="M308 81h-24v24h24z"/><path fill="#DC931A" d="M308 129h24v24h-24zM68 129h24v24H68z"/><path fill="#FFBD3F" d="M140 57h120v120H140z"/><path fill="#F5A623" d="M140 296h96v24h-96zM116 57h24v96h-24zM260 57h24v96h-24zM92 153h72v24H92z"/><path fill="#FFBD3F" d="M164 153h72v24h-72z"/><path fill="#F5A623" d="M236 153h72v24h-72zM140 177h120v24H140z"/><path fill="#DC931A" d="M140 225h120v24H140z"/><path fill="#F5A623" d="M188 249h24v47h-24z"/><path fill="#DC931A" d="M116 201h168v24H116z"/><path fill="#DC931A" d="M116 177h24v48h-24zM260 177h24v48h-24z"/><path fill="#FFF" d="M236 81h-24v48h24z"/></g></svg>
+      <h2>Woohoo!</h2>
+    </div>
   </konami-listener>
 
   <script>
     const konami = document.querySelector('konami-listener');
+    const inputs = document.querySelector('.inputs').children;
+    console.log(inputs);
     konami.addEventListener('match', () => {
-      console.log('match');
+      document.querySelector('main').classList.add('hidden');
     });
     konami.addEventListener('input', ({ detail }) => {
-        console.log('input', detail);
+      if (!detail.reset) {
+        inputs[detail.index].classList.add('active');
+      } else {
+        if (!inputs[9].classList.contains('active')) {
+          Array.from(inputs).forEach(input => input.classList.remove('active'));
+        }
+      }
     });
   </script>
 

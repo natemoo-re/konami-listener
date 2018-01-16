@@ -26,7 +26,7 @@ export class KonamiListener {
 
   handleInput(key: string) {
     this.inputs.push(key);
-    this.input.emit({ key });
+    this.input.emit({ key, index: this.inputs.length - 1 });
 
     if (this.inputs.length === 10) {
       this.handleMatch();

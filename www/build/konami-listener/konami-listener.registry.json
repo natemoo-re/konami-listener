@@ -4,8 +4,8 @@
     [
       "konami-listener",
       [
-        "7t14q09p",
-        "xhhpvrn3"
+        "konami-listener",
+        null
       ],
       1,
       [
@@ -28,7 +28,7 @@
       ]
     ]
   ],
-  "core": "konami-listener.k7w1yabg.js",
-  "coreSsr": "konami-listener.pmus7wkn.js",
-  "corePolyfilled": "konami-listener.rraxgv2c.js"
+  "core": "konami-listener.core.js",
+  "coreSsr": "konami-listener.core.ssr.js",
+  "corePolyfilled": "es5-build-disabled.js"
 }

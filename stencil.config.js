@@ -3,6 +3,9 @@ exports.config = {
   generateDistribution: true,
   bundles: [
     { components: ['konami-listener'] }
+  ],
+  copy: [
+    { src: 'main.css' },
   ]
 };
 
