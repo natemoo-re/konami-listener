@@ -3,7 +3,9 @@
 
 # Konami Listener
 
-`konami-listener` is a web component that listens for the Konami Code. When a match is triggered, it will automatically show any content placed inside of the `konami-listener` component.
+`<konami-listener>` is a web component that listens for the Konami Code. When a match is triggered, it will automatically show any content placed inside of the component, like so `<konami-listener> <h1> Hello world! </h1> </konami-listener>`
+
+See the demo at [http://projects.natemoo.re/konami-listener](http://projects.natemoo.re/konami-listener)
 
 ## Getting Started
 

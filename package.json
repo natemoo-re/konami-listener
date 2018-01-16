@@ -1,6 +1,6 @@
 {
   "name": "konami-listener",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Konami Code listener as a Vanilla Web Component",
   "main": "dist/konami-listener.js",
   "types": "dist/types/index.d.ts",
