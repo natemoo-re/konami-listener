@@ -2,12 +2,13 @@
   "components": [
     {
       "tag": "konami-listener",
+      "dependencies": [],
       "componentClass": "KonamiListener",
       "componentPath": "components/konami-listener/konami-listener.js",
       "styles": {
         "$": {
           "stylePaths": [
-            "components/konami-listener/konami-listener.scss"
+            "components/konami-listener/konami-listener.css"
           ]
         }
       },
@@ -35,20 +36,14 @@
           "event": "match"
         }
       ],
-      "slot": "hasSlots",
       "shadow": true
     }
   ],
-  "bundles": [
-    {
-      "components": [
-        "konami-listener"
-      ]
-    }
-  ],
+  "collections": [],
   "compiler": {
     "name": "@stencil/core",
-    "version": "0.1.1-0",
-    "typescriptVersion": "2.6.2"
-  }
+    "version": "0.11.4",
+    "typescriptVersion": "2.9.2"
+  },
+  "bundles": []
 }

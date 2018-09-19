@@ -2,17 +2,20 @@ import { Component, State, Listen, Event, EventEmitter, Element } from '@stencil
 
 @Component({
   tag: 'konami-listener',
-  styleUrl: 'konami-listener.scss',
+  styleUrl: 'konami-listener.css',
   shadow: true
 })
 export class KonamiListener {
 
-  keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-  accepted = [...new Set(this.keys)];
+  private keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+  private accepted = [...new Set(this.keys)];
+  
+  @Element() el: HTMLElement;
+  
   @State() inputs: string[] = [];
+  
   @Event() input: EventEmitter;
   @Event() match: EventEmitter;
-  @Element() el: HTMLElement;
 
   @Listen('document:keydown')
   handleKey(e: KeyboardEvent) {
@@ -47,10 +50,6 @@ export class KonamiListener {
   }
 
   render() {
-    return (
-      <div>
-        <slot/>
-      </div>
-    );
+    return <slot/>
   }
 }

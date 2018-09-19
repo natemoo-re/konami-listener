@@ -1,4 +1,7 @@
-export class KonamiListener {
+/*! Built with http://stenciljs.com */
+const { h } = window.KonamiListener;
+
+class KonamiListener {
     constructor() {
         this.keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
         this.accepted = [...new Set(this.keys)];
@@ -60,5 +63,7 @@ export class KonamiListener {
             "name": "document:keydown",
             "method": "handleKey"
         }]; }
-    static get style() { return "/**style-placeholder:konami-listener:**/"; }
+    static get style() { return "\n.sc-konami-listener-h {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n\n.active.sc-konami-listener-h {\n  display: block;\n}\n"; }
 }
+
+export { KonamiListener };

@@ -1,11 +1,12 @@
-import { EventEmitter } from '@stencil/core';
+import '../../stencil.core';
+import { EventEmitter } from '../../stencil.core';
 export declare class KonamiListener {
-    keys: string[];
-    accepted: string[];
+    private keys;
+    private accepted;
+    el: HTMLElement;
     inputs: string[];
     input: EventEmitter;
     match: EventEmitter;
-    el: HTMLElement;
     handleKey(e: KeyboardEvent): void;
     handleInput(key: string): void;
     handleMatch(): void;

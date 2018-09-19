@@ -1,30 +1,24 @@
 {
   "name": "konami-listener",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Konami Code listener as a Vanilla Web Component",
-  "main": "dist/konami-listener.js",
-  "types": "dist/types/index.d.ts",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/konami-listener.js",
   "scripts": {
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
-  },
-  "dependencies": {
-    "@stencil/core": "next"
+    "start": "stencil build --dev --watch --serve",
+    "test": "jest",
+    "test.watch": "jest --watch"
   },
   "devDependencies": {
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/jest": "^21.1.1",
-    "jest": "^21.2.1"
+    "@stencil/core": "^0.11.0",
+    "@types/jest": "^23.3.1",
+    "jest": "^23.4.2"
   },
   "repository": {
     "type": "git",
