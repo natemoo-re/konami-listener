@@ -1,1 +1,0 @@
-// KonamiListener: CommonJS Main
