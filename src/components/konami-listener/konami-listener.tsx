@@ -1,28 +1,40 @@
-import { Component, State, Listen, Event, EventEmitter, Element } from '@stencil/core';
+import { h, Component, State, Listen, Event, EventEmitter, Element } from '@stencil/core';
 
 @Component({
-  tag: 'konami-listener',
-  styleUrl: 'konami-listener.css',
-  shadow: true
+  tag: "konami-listener",
+  styleUrl: "konami-listener.css",
+  shadow: true,
 })
 export class KonamiListener {
-
-  private keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+  private keys = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
   private accepted = [...new Set(this.keys)];
-  
+
   @Element() el: HTMLElement;
-  
+
   @State() inputs: string[] = [];
-  
+
   @Event() input: EventEmitter;
   @Event() match: EventEmitter;
 
-  @Listen('document:keydown')
+  @Listen("keydown", {
+    target: "document",
+  })
   handleKey(e: KeyboardEvent) {
-    let { key } = e;
+    const { key } = e;
     if (!this.accepted.includes(key)) return;
 
-    (this.keys[this.inputs.length] === key)
+    this.keys[this.inputs.length] === key
       ? this.handleInput(key)
       : this.reset();
   }
@@ -38,7 +50,7 @@ export class KonamiListener {
 
   handleMatch() {
     this.match.emit();
-    this.el.classList.add('active');
+    this.el.classList.add("active");
     this.reset();
   }
 
@@ -50,6 +62,6 @@ export class KonamiListener {
   }
 
   render() {
-    return <slot/>
+    return <slot />;
   }
 }

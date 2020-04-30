@@ -2,23 +2,27 @@
   "name": "konami-listener",
   "version": "0.3.0",
   "description": "Konami Code listener as a Vanilla Web Component",
-  "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/konami-listener/konami-listener.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "jest",
-    "test.watch": "jest --watch"
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^0.11.0",
-    "@types/jest": "^23.3.1",
-    "jest": "^23.4.2"
+    "@stencil/core": "^1.12.7"
   },
   "repository": {
     "type": "git",
@@ -29,18 +33,5 @@
   "bugs": {
     "url": "https://github.com/natemoo-re/konami-listener"
   },
-  "homepage": "http://projects.natemoo.re/konami-listener",
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  }
+  "homepage": "http://projects.natemoo.re/konami-listener"
 }

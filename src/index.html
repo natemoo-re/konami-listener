@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>Konami Listener</title>
 
-  <script src="/build/konami-listener.js"></script>
+  <script type="module" src="/build/konami-listener.esm.js"></script>
+  <script nomodule src="/build/konami-listener.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
   <link rel="stylesheet" href="/main.css">
@@ -102,7 +103,6 @@
   <script>
     const konami = document.querySelector('konami-listener');
     const inputs = document.querySelector('.inputs').children;
-    console.log(inputs);
     konami.addEventListener('match', () => {
       document.querySelector('main').classList.add('hidden');
     });
